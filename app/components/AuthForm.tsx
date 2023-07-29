@@ -49,9 +49,15 @@ function AuthForm({ type }: { type: "login" | "register" }) {
         <div className="flex items-center gap-2">
           <input type="checkbox" id="cb" />
           <label htmlFor="cb" className="text-[#333]">
-            {type === "login"
-              ? "Ingat Saya"
-              : "Saya setuju dan menerima Syarat dan Ketentuan"}
+            {type === "login" ? "Ingat Saya" : "Saya setuju dan menerima "}
+            {type === "register" && (
+              <a
+                href="/terms-condition"
+                className="text-[#4154f1] duration-300 ease-linear hover:opacity-50"
+              >
+                Syarat dan Ketentuan
+              </a>
+            )}
           </label>
         </div>
         <div>

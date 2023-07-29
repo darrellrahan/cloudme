@@ -1,8 +1,9 @@
+import MainLayout from "./components/MainLayout";
+
 export default function Home() {
   return (
-    <main>
-      <a href="/login">Login</a>
-      <a href="/register">Register</a>
-    </main>
+    <MainLayout>
+      <h1>Dashboard</h1>
+    </MainLayout>
   );
 }
