@@ -42,3 +42,31 @@ export const sidebar: {
     url: "/inactive",
   },
 ];
+
+export const quickAccess = [
+  {
+    folderName: "Unpad",
+    numOfFiles: 4,
+    size: 23.2,
+  },
+  {
+    folderName: "Institut Teknologi Bandung",
+    numOfFiles: 2,
+    size: 13.2,
+  },
+  {
+    folderName: "Universitas Pendidikan Indonesia",
+    numOfFiles: 6,
+    size: 30,
+  },
+  {
+    folderName: "UNIKOM",
+    numOfFiles: 1,
+    size: 5,
+  },
+  {
+    folderName: "Unpas",
+    numOfFiles: 3,
+    size: 17,
+  },
+];

@@ -1,9 +1,10 @@
+import Dashboard from "./components/Dashboard";
 import MainLayout from "./components/MainLayout";
 
 export default function Home() {
   return (
     <MainLayout>
-      <h1>Dashboard</h1>
+      <Dashboard />
     </MainLayout>
   );
 }
