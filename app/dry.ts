@@ -1,5 +1,9 @@
 import { RxDashboard } from "react-icons/rx";
 import { HiOutlineTrash } from "react-icons/hi";
+import { AiFillFolder } from "react-icons/ai";
+import { IconType } from "react-icons";
+import { BsCardImage } from "react-icons/bs";
+import { IoDocumentTextSharp } from "react-icons/io5";
 
 export const sidebar: {
   isReactIcons: boolean;
@@ -68,5 +72,72 @@ export const quickAccess = [
     folderName: "Unpas",
     numOfFiles: 3,
     size: 17,
+  },
+];
+
+export const recentFiles: {
+  icon: {
+    type: IconType;
+    color: string;
+  };
+  name: string;
+  details?: {
+    items: number;
+    size: number;
+  };
+}[] = [
+  {
+    icon: {
+      type: AiFillFolder,
+      color: "#012970",
+    },
+    name: "UNIKOM",
+    details: {
+      items: 5,
+      size: 512,
+    },
+  },
+  {
+    icon: {
+      type: AiFillFolder,
+      color: "#012970",
+    },
+    name: "Unpad",
+    details: {
+      items: 13,
+      size: 956,
+    },
+  },
+  {
+    icon: {
+      type: AiFillFolder,
+      color: "#012970",
+    },
+    name: "Institut Teknologi Bandung",
+    details: {
+      items: 1,
+      size: 20,
+    },
+  },
+  {
+    icon: {
+      type: BsCardImage,
+      color: "#BE63F9",
+    },
+    name: "img.png",
+  },
+  {
+    icon: {
+      type: IoDocumentTextSharp,
+      color: "#FF9900",
+    },
+    name: "document.docx",
+  },
+  {
+    icon: {
+      type: BsCardImage,
+      color: "#BE63F9",
+    },
+    name: "image-2.jpg",
   },
 ];
