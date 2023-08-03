@@ -1,11 +1,10 @@
 import React from "react";
-import { AiFillFolder } from "react-icons/ai";
 import { recentFiles } from "../dry";
 
 function RecentFiles() {
   return (
-    <div>
-      <h3 className="text-[#012970] text-2xl font-medium mb-4">
+    <div className="bg-white shadow rounded-lg p-6">
+      <h3 className="text-[#012970] text-2xl font-semibold mb-4">
         Recent Files / Folders
       </h3>
       <div className="grid grid-cols-3 gap-8">

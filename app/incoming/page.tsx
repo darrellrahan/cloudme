@@ -1,10 +1,11 @@
 import React from "react";
+import Incoming from "../components/Incoming";
 import MainLayout from "../components/MainLayout";
 
 function page() {
   return (
     <MainLayout>
-      <h1>Surat Masuk</h1>
+      <Incoming />
     </MainLayout>
   );
 }

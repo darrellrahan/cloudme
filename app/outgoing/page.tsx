@@ -1,10 +1,11 @@
 import React from "react";
 import MainLayout from "../components/MainLayout";
+import Outgoing from "../components/Outgoing";
 
 function page() {
   return (
     <MainLayout>
-      <h1>Surat Keluar</h1>
+      <Outgoing />
     </MainLayout>
   );
 }
