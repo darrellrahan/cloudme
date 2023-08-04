@@ -141,3 +141,34 @@ export const recentFiles: {
     name: "image-2.jpg",
   },
 ];
+
+export const list = {
+  th: ["Nama", "Diubah", "Ukuran File"],
+  body: [
+    {
+      name: "Unpad",
+      lastChanged: "2 jam yang lalu",
+      size: "512 MB",
+    },
+    {
+      name: "UNIKOM",
+      lastChanged: "1 jam yang lalu",
+      size: "12 MB",
+    },
+    {
+      name: "ISBI",
+      lastChanged: "10 menit yang lalu",
+      size: "1 KB",
+    },
+    {
+      name: "Universitas Pendidikan Indonesia",
+      lastChanged: "52 detik yang lalu",
+      size: "72 KB",
+    },
+    {
+      name: "Institut Teknologi Bandung",
+      lastChanged: "10 detik yang lalu",
+      size: "1 B",
+    },
+  ],
+};
