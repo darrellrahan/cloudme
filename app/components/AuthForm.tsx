@@ -1,6 +1,38 @@
-import React from "react";
+"use client";
+
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import React, { useState } from "react";
+import { auth, getError } from "../firebase";
 
 function AuthForm({ type }: { type: "login" | "register" }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function register(name: string, email: string, password: string) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        updateProfile(userCredential.user, {
+          displayName: name,
+        }).catch((error) => {
+          alert(getError(error.code));
+        });
+      })
+      .catch((error) => {
+        alert(getError(error.code));
+      });
+  }
+
+  function login(email: string, password: string) {
+    signInWithEmailAndPassword(auth, email, password).catch((error) => {
+      alert(getError(error.code));
+    });
+  }
+
   return (
     <div className="w-[39.375rem] rounded-lg bg-white shadow-[4px_4px_8px_#b6b6b6] p-6 flex gap-8 flex-col">
       <div className="text-center">
@@ -20,6 +52,8 @@ function AuthForm({ type }: { type: "login" | "register" }) {
               Name
             </label>
             <input
+              onChange={(e) => setName(e.target.value)}
+              value={name}
               className="w-full h-[2.8125rem] rounded-lg border border-[#808080] mt-2 px-3"
               type="text"
               id="name"
@@ -31,6 +65,8 @@ function AuthForm({ type }: { type: "login" | "register" }) {
             Email
           </label>
           <input
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
             className="w-full h-[2.8125rem] rounded-lg border border-[#808080] mt-2 px-3"
             type="email"
             id="email"
@@ -41,6 +77,8 @@ function AuthForm({ type }: { type: "login" | "register" }) {
             Kata Sandi
           </label>
           <input
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
             className="w-full h-[2.8125rem] rounded-lg border border-[#808080] mt-2 px-3"
             type="password"
             id="password"
@@ -61,12 +99,16 @@ function AuthForm({ type }: { type: "login" | "register" }) {
           </label>
         </div>
         <div>
-          <a
-            href="/"
+          <button
+            onClick={() =>
+              type === "login"
+                ? login(email, password)
+                : register(name, email, password)
+            }
             className="bg-[#4154f1] text-white w-full rounded-lg text-xl leading-[1px] h-[2.8125rem] duration-300 ease-linear hover:bg-[#4154f150] font-medium block flex items-center justify-center"
           >
             {type === "login" ? "Masuk" : "Buat Akun"}
-          </a>
+          </button>
         </div>
         <div>
           <p className="text-[#333]">

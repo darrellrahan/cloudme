@@ -1,8 +1,23 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Auth from "../components/Auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
+import { useRouter } from "next/navigation";
+import Loading from "../components/Loading";
 
 function page() {
-  return <Auth type="login" />;
+  const [user, loading] = useAuthState(auth);
+  const { push } = useRouter();
+
+  useEffect(() => {
+    if (user) push("/");
+  }, [user]);
+
+  if (!loading && !user) return <Auth type="login" />;
+
+  return <Loading />;
 }
 
 export default page;
