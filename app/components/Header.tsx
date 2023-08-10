@@ -1,20 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Logo from "./Logo";
-import { BsChevronDown } from "react-icons/bs";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-import { useRouter } from "next/navigation";
 
 function Header() {
   const [user] = useAuthState(auth);
-  const { push } = useRouter();
-
-  useEffect(() => {
-    if (!user) push("/login");
-  }, [user]);
 
   return (
     <section id="header">
